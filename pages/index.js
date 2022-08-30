@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import Login from '../components/Login'
-
+import Feed from '../components/Feed'
 
 export default function Home({session}) {
   if(!session) return <Login />;
@@ -15,10 +15,10 @@ export default function Home({session}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className='bg-gray-100'>
+      <main className='flex bg-gray-100'>
         {/*Left Sidebar */}
         <Sidebar />
-        {/*Feed */}
+        <Feed />
         {/*Right Side bar */}
       </main>
 
