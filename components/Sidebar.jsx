@@ -9,7 +9,7 @@ import { useSession, signOut } from "next-auth/react";
 const Sidebar = () => {
   const {data: session} = useSession();
   return (
-    <div className="hidden lg:inline-flex flex-col py-2 pl-2 max-w-xl lg:min-w-[320px]">
+    <div className="hidden lg:inline-flex flex-col py-2 pl-2 max-w-xl lg:min-w-[320px] overflow-y-auto no-scrollbar">
       <div className="flex items-center space-x-2 py-3 pl-4 hover:bg-gray-300 rounded-l-xl cursor-pointer">
         <Image
           src={session?.user?.image}
