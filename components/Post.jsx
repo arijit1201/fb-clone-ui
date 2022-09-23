@@ -3,9 +3,9 @@ import {FiThumbsUp} from 'react-icons/fi'
 import {FaRegCommentAlt} from 'react-icons/fa'
 import { RiShareForward2Line } from 'react-icons/ri'
 const Post = ({post}) => {
-  console.log(post);
+  // console.log(post.image?.data);
   return (
-    <div className='flex flex-col' kley={post.id}>
+    <div className='flex flex-col' key={post.id}>
         <div className='bg-white mt-6 rounded-md p-4'>
             <div className='flex items-center  space-x-2'>
                 <img src={post.profilePic} alt="" className='rounded-full w-10 h-10'/>
@@ -14,10 +14,10 @@ const Post = ({post}) => {
                     <p className='text-xs text-gray-500'>{post.timeStamp}</p>
                 </div>
             </div>
-            <p className='py-4'>{post.post}</p>
+            <p className='py-4'>{post?.post}</p>
             {/* If there is any image https://images.pexels.com/photos/730564/pexels-photo-730564.jpeg */}
             {post.image != null && (<div className='relative h-60 md:h-96 bg-white'>
-                <Image src={`data:image/png;base64,${post.imgRes}`} layout="fill" objectFit='scale-down' />
+                <Image src={`data:image/png;base64,${post.image.data}`} layout="fill" objectFit='scale-down' />
             </div>)}
             {/*Footer */}
             <div className='flex items-center justify-center bg-white p-2'>

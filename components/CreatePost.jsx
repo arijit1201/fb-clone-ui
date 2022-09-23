@@ -41,16 +41,15 @@ const CreatePost = () => {
     const postData = {
       name: session?.user.name,
       email: session?.user.email,
-      post: inputRef.current.value
+      post: inputRef.current.value,
+      profile: session?.user?.image
     }
-   
+
     formData.append("image", imageToPost);
     formData.append("data", JSON.stringify(JSON.stringify(postData)));
     formData.append("post", inputRef.current.value);
     formData.append("name", session?.user.name);
     formData.append("email", session?.user.email);
-    formData.append("profile", session?.user.image);
-    console.log(formData.get("image"), formData.get("profile"));
     axios
       .post(FACEBOOK_CLONE_ENDPOINT, formData, {
         headers: {
